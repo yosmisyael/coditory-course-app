@@ -24,4 +24,8 @@ describe('UserAuthService', function() {
         $this->userAuthService->logout();
         expect(auth()->user())->toBeNull();
     });
+
+    it('should register user', function () {
+       expect($this->userAuthService->register('test1@test.com', 'test1', 'test1', 'password'))->toBeTrue();
+    });
 });
